@@ -1,0 +1,60 @@
+{% extends 'main/base_normal.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% block header %}
+{{ wizard.form.media }}
+{% endblock %}
+
+{% block main %}
+
+<div class='profile_content'>
+
+	<form action="" method="post">{% csrf_token %}
+	{{ wizard.management_form }}
+	{% if wizard.form.forms %}
+    		{{ wizard.form.management_form }}
+    		{% for form in wizard.form.forms %}
+        		{{ form }}
+    		{% endfor %}
+	{% else %}
+    		{{ wizard.form }}
+		{% for form in wizard.form.forms %}
+                        {{ form }}
+                {% endfor %}
+	{% endif %}
+
+        <div class='container'>
+		<div class='col-md-12'>
+			<div class='row'>
+				<div class='col-md-1'>
+					<a href='/main/schedule'><h2 style='display:inline;' class='glyphicon glyphicon-arrow-left'></h2></a>
+				</div>
+				<div style='text-align:center;' class='col-md-9 col-offset-md-2'>
+					<h2 style='display:inline;'>Pick Your Dates</h2>
+				</div>
+				<div class='col-md-2'>
+					<button class='btn btn-success' style='width:150px;' type="submit" value="{{ wizard.steps.first }}">{% trans "Next" %}</button>
+				</div>
+			</div>
+			<br>
+			<br>
+			<div class='row'>
+				<div class='calendar'></div>
+			</div>
+		</div>
+	</div>
+	<div class='container'>
+		<div class='col-md-12'>
+			<div class='row'>
+				<div id='calendar'></div>
+			</div>
+		</div>`
+	</div>
+</div>
+
+<link rel='stylesheet' href="{% static 'main/fullcalendar-2.4.0/fullcalendar.css' %}" />
+<script src="{% static 'main/fullcalendar-2.4.0/lib/moment.min.js' %}"></script>
+<script src="{% static 'main/fullcalendar-2.4.0/fullcalendar.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/schedule.js' %}"></script>
+<link rel="stylesheet" href="{% static 'main/schedule.css' %}" />
+{% endblock %}             

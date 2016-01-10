@@ -1,0 +1,19 @@
+{% load staticfiles %}
+{% for event in events %}
+	<div class='row'>
+		<div class='col-md-2'>
+			<img style='width: 100px; height: 100px;' src='/static/main/pasta_making.jpg' class='img-circle'></img>
+		</div>
+		<div class='col-md-6'>
+			<h2 style='display:inline;'>{{event.title}}</h2>
+			<p>Created On {{event.created_at}}</p>
+		</div>
+		<div class='col-md-2'>
+			<a href='{% url 'edit_event' event.id %}'><h2 style='display:flex; align-items:center' class='glyphicon glyphicon-edit pull-right'></h2></a>
+		</div>
+		<div class='col-md-2'>
+			<a href='{% url 'delete_event' event.id %}'><h2 style='display:flex; align-items:center; color:red;' class='glyphicon glyphicon-remove pull-right'></h2></a>
+		</div>
+	</div>
+	<hr>
+{% endfor %}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+{% load staticfiles %}
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'main/base_normal.css' %}" />
+
+	<link rel="stylesheet" href="{% static 'main/Flat-UI/dist/js/flat-ui.js' %}" />
+	<link rel='stylesheet' type='text/css' href="{% static 'main/Flat-UI/dist/css/flat-ui.css' %}" />
+	<link rel='stylesheet' type='text/css' href="{% static 'main/Flat-UI/dist/css/flat-ui.css.map' %}" />
+	<link rel='stylesheet' type='text/css' href="{% static 'main/Flat-UI/dist/css/flat-ui.min.css' %}" />
+<!--
+	<link rel='stylesheet' href="{% static 'main/fullcalendar-2.4.0/fullcalendar.css' %}" />
+	<script src="{% static 'main/fullcalendar-2.4.0/lib/moment.min.js' %}"></script>
+	<script src="{% static 'main/fullcalendar-2.4.0/fullcalendar.js' %}"></script>
+-->
+</head>
+<body>
+	<link rel="stylesheet" href="{% static 'main/base_normal.js' %}" />
+	<div class='header_block'>
+		<div class='container'>
+			<div class='row'>
+        			<a href="/main/home"><span class="navbar-text navbar-left">Something<b>New</b>.</span></a>
+                		<div class="dropdown pull-right user-options">
+                			<a href="/something/reserve">
+                        			<span class="navbar-text reserve glyphicon glyphicon-calendar"></span>
+                        			<span class="navbar-text schedule-text">Create Your Own</span>
+					</a>
+                        		<a data-toggle="dropdown" href="#"><span  class="navbar-text user-icon glyphicon glyphicon-user"></span></a>
+                       			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dLabel">
+                        			<li role="presentation"><a role="menuitem" tabindex="-1" href="/something/profile">My Profile</a></li>
+                                		<li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'auth:logout' %}?next=/something/">Logout</a></li>
+                        		</ul>
+                		</div>
+        		</div>
+		</div>
+	</div>
+	<div class='content_block'>
+		{% block header %}{% endblock %}
+		{% block main %}{% endblock %}
+	</div>
+	<div class="panel-footer">
+                <div class="container">
+			<div style="padding-top: 15px; padding-bottom: 10px;" class="col-md-5">
+				<span>
+                                	Something<b>New.</b>
+                        	</span>
+				<img style="margin-left: 60px; margin-top: -5px; width: 24px;  height: 24px;" src="{% static "main/twitter.png" %}" alt="hello" />
+                                <img style="margin-left: 15px; margin-top: -5px; width: 24px; height: 24px;" src="{% static "main/instagram.png" %}" alt="hello" />
+                                <img style="margin-left: 15px; margin-top: -5px; width: 24px; height: 24px;" src="{% static "main/facebook.png" %}" alt="hello" />
+			</div>
+			
+                
+		<div style="padding-top: 15px; padding-bottom: 10px;" class="col-md-7 footer_list">
+			<ul>
+				<li>Become a Host</li>
+				<li>Our Story</li>
+				<li>Blog</li>
+				<li>Careers</li>
+				<li>Terms of Service</li>
+			</ul>
+		</div>
+		</div>
+        </div>
+  </body>
+</html>

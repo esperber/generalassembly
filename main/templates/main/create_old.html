@@ -1,0 +1,90 @@
+{% extends 'main/base_normal.html' %}
+{% load staticfiles %}
+
+
+{% block main %}
+<div class='profile_content'>
+	<div class='container'>
+		<div class='col-md-12'>
+			<div class='row'>
+				<div class='col-md-2 step description'> 
+					<span class="number_circle"><span>1</span></span><span class='step_text'> General</span>
+				</div>
+				<div class='col-md-2 step about_you'>
+                                        <span class="number_circle"><span>2</span></span><span class='step_text'> About You</span>
+                                </div>
+				<div class='col-md-2 step location'>
+                                        <span class="number_circle"><span>3</span></span><span class='step_text'> Location</span>
+                                </div>
+				<div class='col-md-2 step pictures'>
+                                        <span class="number_circle"><span>4</span></span><span class='step_text'> Pictures</span>
+                                </div>
+				<div class='col-md-2 step questionaire'>
+                                        <span class="number_circle"><span>5</span></span><span class='step_text'> Questionaire</span>
+                                </div>
+				<div class='col-md-2 step confirmation'>
+                                        <span class="number_circle"><span>6</span></span><span class='step_text'> Confirmation</span>
+                                </div>
+			</div>
+			<hr>
+			<div class='form-view'>
+				<div class='row form-content'>
+                			<div class='col-md-8'>
+						<div id="scroll-view">
+							<div id="scroll-items">
+								<div class="view description">
+									<h2>Gives us a description</h2>
+									<div class="form-group">
+										<label>Title</label>
+										<input type="text" class="form-control"></input>
+										<label>Description</label>
+										<textarea type="text" class="form-control"></textarea>
+									</div>
+								</div>
+								<div class="view about_you">
+									<h2>Tell us about yourself</h2>
+                                                                        <div class="form-group">                                                                                                                            <label>Why are you qualified to host this event?</label>
+                                                                                <textarea type="text" class="form-control"></textarea>                                                                              </div>
+								</div>
+								<div class="view location">
+									<h2>Where are you hosting this event?</h2>
+                                                                        <div class="form-group">
+										<label>Whats the address?</label>
+                                                                                <input type="text" class="form-control"></input>
+                                                                        </div>
+								</div>
+								<div class="view pictures">
+                                                                	<h2>Add a few pictures</h2>
+                                                        	</div>
+								<div class="view price">
+                                                                	<h2>How much do you want to charge for this?</h2>
+                                                                        <div class="form-group">
+                                                                                <label>Price</label>
+                                                                                <input type="text" class="form-control"></input>
+                                                                        </div>
+
+                                                        	</div>
+								<div class="view confirmation">
+                                                                	<span>Confirmation</span>
+                                                        	</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='row navigation-buttons'>
+					<div class='col-md-6'>
+						<button class="btn btn-info standard-button" id="previous">Previous</button>
+					</div>
+					<div class='col-md-6'>
+						<button class="btn btn-info pull-right standard-button" id="next">Next</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<link rel='stylesheet' href="{% static 'main/create.css' %}" />
+<script type="text/javascript" src="{% static 'main/create.js' %}"></script>
+{% endblock %}
+               

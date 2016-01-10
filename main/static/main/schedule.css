@@ -1,0 +1,18 @@
+.list-group:hover{
+	cursor: pointer;
+}
+
+.slot_field{
+	padding-left: 40px;
+	display: inline;
+	width: 100px;
+}
+
+.time_entry_field{
+	display: inline;
+	width: 250px;
+}
+
+label{
+	display: block;
+}

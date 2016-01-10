@@ -1,0 +1,30 @@
+{% extends 'main/create.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block current_form  %}
+<h2>hi</h2>
+<div id="outer">  
+	<p class="clear" />
+    	<div id="first-page">
+        		<div class="content-container">This is the FIRST page</div>
+        		<div class="button-container">
+            		<div id="go" class="button">GO</div>
+        	</div>
+    	</div>
+    	<div id="second-page">
+        	<div class="content-container">This is the SECOND page</div>
+        	<div class="button-container">
+            		<div id="back1" class="button">BACK</div>
+            		<div id="go1" class="button">GO</div>
+        	</div>    
+    	</div>
+    	<div id="third-page">
+        	<div class="content-container">This is the THIRD page</div>
+        	<div class="button-container">
+            		<div class="button">CLICK ME!</div>
+        	</div>
+    	</div>
+</div>  
+
+{% endblock %}

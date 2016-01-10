@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/index.css' %}" />
+<script src="{% static 'main/index.js' %}"> </script>
+
+
+<body>
+
+	<div class="modal fade bs-example-modal-sm" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <button type="button" style='margin-top: -10px;' class="close" 
+						data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </div>
+                                <div class='modal-body login_form'>
+					<div class='facebook_login_div' style='text-align:center' >
+                                        	<a  href="{% url 'social:begin' 'facebook' %}
+							?next=/main/home/"><button class="btn-sm  btn-info facebook_login">Sign In With Facebook</button></a>
+                                		<br>
+						<hr class='login_split'>
+
+						{% if form.non_field_errors %}
+    							<ul class='form-errors'>
+        						{% for error in form.non_field_errors %}
+            							<li>{{ error }}</li>
+        						{% endfor %}
+    							</ul>
+						{% endif %}
+						<form role='form' method="POST" action="/main/login/">
+							{% csrf_token %}
+							<div class='form-group'>
+								<div class='col-sm-12'>
+									<input name='username' type="email" class="form-control" id="email_form" placeholder="Email">
+								</div>
+							</div>
+							<div class='form-group'>
+								<div class='col-sm-12' style='margin-top: 10px;'>
+									<input name='password' type="password" class="form-control" id="password_form" placeholder="Password">
+								</div>
+							</div>
+							<button type='submit' value='submit' style='margin-top: 10px; width: 150px;' class='btn-sm btn-danger login_button'>Submit</button>
+						</form>
+						<div class='row'>
+							<span style='font-size: 10px;'>Don't have an account? Get one <a class='switch'>here</a></span>		
+						</div>
+					</div>
+				</div>
+				<div class='modal-body registration_form' style='display: none;'>
+                                        <div class='facebook_login_div' style='text-align:center' >
+                                        	<form role='form' method="POST" action="/main/register/">
+                                                        {% csrf_token %}
+                                                        <div class='form-group'>
+                                                                <div class='col-sm-12'>
+                                                                        <input name='first_name' type="text" class="form-control" id="first_name_form" placeholder="First Name">
+                                                                </div>
+                                                        </div>
+                                                        <div class='form-group'>
+                                                                <div class='col-sm-12' style='margin-top: 10px;'>
+                                                                        <input name='last_name' type="text" class="form-control" id="last_name_form" placeholder="Last Name">
+                                                                </div>
+                                                        </div>
+							<div class='form-group'>
+                                                                <div class='col-sm-12' style='margin-top: 10px;'>
+                                                                        <input name='email' type="text" class="form-control" id="email_form" placeholder="Email">
+                                                                </div>
+                                                        </div>
+							<div class='form-group'>
+                                                        	<div class='col-sm-12' style='margin-top: 10px;'>
+                                                                        <input name='password' type="text" class="form-control" id="password_form" placeholder="Password">
+                                                                </div>
+                                                        </div>
+							<div class='form-group'>
+                                                        	<div class='col-sm-12' style='margin-top: 10px;'>
+                                                                        <input name='birthday' type="text" class="form-control" id="birthday_form" placeholder="Birthday">
+                                                                </div>
+                                                        </div>
+                                                        <button type='submit' value='submit' style='margin-top: 10px; width: 150px;' class='btn-sm btn-danger login_button'>Register</button>
+                                                </form>
+                                                <div class='row'>
+                                                        <span style='font-size: 10px;'>Already have an account? Log in <a class='switch'>here</a></span>
+                                                </div>
+                                        </div>
+                                </div>
+
+                	</div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+        </div>
+
+<div class="wrapper">
+
+
+	<nav class="navbar-fixed-top navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">	
+				<span class="navbar-text navbar-left">Something<b>New</b>.</span>
+			</div>
+			<div class="navbar-form">
+				<button type="button" class="btn-sm  btn-info navbar-right log_in" data-toggle="modal" data-target="#login_modal">Log In</button>
+			</div>
+		</div>
+
+	</nav>
+	<div class="header-image">
+		<video width='100%' height:'210' autoplay loop>
+			<source src='{% static "main/waves.mp4" %}' type="video/mp4"/>
+		</video>
+		<div class="header-text">
+			<br><br><br><br>
+			<h1>Find Something Interesting To Do</h1>
+			<h3>Learn From The Locals</h3>
+		</div>
+	</div>
+	<div class='container'>
+		<div class="row">
+			<h1>How Does It Work?</h1><br><br><br>
+		</div>
+		<div class="row"> 
+			<div class="col-md-4 .col-xs-6">
+				<img style="height: 100px;" src="{% static "something/iphone.png" %}" alt="hello" />
+				<h2>Find It</h2>
+				<p>Find hosts in your area that'll introduce you to something new. Whether it's surfing or cooking paella.</p>
+			</div>
+			<div class="col-md-4">
+				<img style="height: 100px;" src="{% static "something/map.png" %}" alt="hello" />
+				<h2>Sign Up</h2>
+				<p>Pick a date and location offered by the host. We'll send you all the information</p> 
+			</div>
+			<div class="col-md-4">
+				<img style="height: 100px;" src="{% static "something/camera.png" %}" alt="hello" />
+				<h2>Show Up</h2>
+				<p>Sit back and experience something new.</p>
+		</div>
+		</div>	
+	</div>
+	<br>
+	<br>
+	<div class="container-fluid">
+		<div class="where_are_we">
+			<div class="container">
+				<h1>Where Are We?</h1>
+				<br>
+				<h2>Washington D.C</h2>
+				<br>
+				<br>
+				<div class="span6" style="text-align:center">
+					<button class="btn btn-info">Request Us</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel-footer">
+		<div class="container">
+			<br>
+			<address>
+				Something<b>New.</b>
+			</address>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+

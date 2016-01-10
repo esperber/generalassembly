@@ -1,0 +1,31 @@
+{% extends 'main/base_normal.html' %}
+{% load staticfiles %}
+{% block main %}
+<div class='profile_content'>
+	<div class='container'>
+		<div class='col-md-3'>
+			<div class='row'>
+				<ul class="list-group selectors" style='margin-top:50px;'>
+					<li class='list-group-item'>Profile</li>
+					<li class='list-group-item'>Payment</li>
+					<li class='list-group-item'>Preferences</li>
+				</ul>
+			</div>
+		</div>
+		<div class='col-md-8 col-md-offset-1' style='margin-top: 50px;'>
+			<div class='row'>
+				<div class='col-md-8'>
+					<form role='form' action="/main/profile/" method="post">
+    						{% csrf_token %}
+    						{{ form.as_p }}    					
+						<button class='btn btn-info' style='width: 150px;'  type="submit">Save</button>
+					</form>
+				</div>			
+			</div>
+		</div>
+
+	
+	</div>
+</div>
+{% endblock %}
+               

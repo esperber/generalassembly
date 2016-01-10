@@ -1,0 +1,28 @@
+{% extends 'main/create.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head %}
+{{ wizard.form.media }}
+{% endblock %}
+
+{% block current_form  %}
+	<form action="" method="post">{% csrf_token %}
+		{{ wizard.management_form }}
+       		{{ wizard.form.management_form }}
+		{{ form }} 
+		{{ wizard.form.non_field_errors }}
+		{{ wizard.form.errors }}
+	<br>
+
+	<div class='row'>
+		<div class='col-md-6'>
+        		<button class='btn btn-success' style='width:100px;' type="submit" name='wizard_goto_step'  value="{{ wizard.steps.prev }}">{% trans "Back" %}</button>
+         	</div>
+         	<div class='col-md-6'>
+         		<button class='btn btn-success pull-right' style='width:100px;' type="submit" name='wizard_goto_step'  value="{{ wizard.steps.next }}">{% trans "Next" %}</button>
+          	</div>
+
+	</div>
+	</form>
+{% endblock %}

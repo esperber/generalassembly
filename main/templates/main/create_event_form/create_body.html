@@ -1,0 +1,125 @@
+{% extends 'main/create.html' %}
+
+{% block content_block %}
+	<div class="view description">
+			<h2 class='text-center'>General Information</h2>
+    		<div class="form-group">
+        		<label>Title</label>
+        		{{ form.title.errors }}
+        		{{ form.title }}
+			<div class='row'>
+				<div class='col-md-6'>
+        			<label>Tell us about the activity.</label>
+        			{{ form.description.errors }}
+        			{{ form.description }}
+    			</div>
+				<div class='col-md-6'>
+					<label>How are you qualified to offer this?</label>
+                    {{ form.description }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="view location-view">
+		<h2 class='text-center'>Where are you hosting this event?</h2>
+    		<div class="form-group"> 
+			<div class='row'>
+				<div class='col-md-6'>  
+    					<label>Address</label>
+    					{{ form.address.errors }}
+        				{{ form.address }}
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-md-6'>
+					<label>City</label>
+					{{ form.city.errors }}
+                	{{ form.city }}    
+    			</div>
+			</div>
+			<div class='row'>
+				<div class='col-md-3'>
+					<label>State</label>
+					{{ form.state.errors }}
+                    {{ form.state }}
+				</div>
+				<div class='col-md-3'>
+					<label>Zip</label>
+					{{ form.zip_code.errors }}
+                    {{ form.zip_code }}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!------------------------------------------------------>
+<!---------------- Price Form: Start ------------------->
+<!------------------------------------------------------>
+
+	<div class="view price">
+		<h2 class='text-center'>How much do you want to offer this event for?</h2>
+    	<div class="form-group">
+			<div class='row'>
+				<div class='col-md-6'>
+					<label>Price</label>
+					{{ form.price.errors }}
+        			{{ form.price }}
+				</div>
+    		</div>
+		</div>
+	</div>
+<!------------------------------------------------------>
+<!----------------- Price Form: End -------------------->
+<!------------------------------------------------------>
+
+<!------------------------------------------------------>
+<!---------------- Image Form: Start ------------------->
+<!------------------------------------------------------>
+	<div class="view pictures">
+		<h2 class='text-center'>Add a few pictures</h2>
+		<div class='row'>
+			<div class='col-md-6'>
+	        	<div>
+					<div class="dz-message needsclick">
+						<h1 class='fui-folder drop-folder text-center'></h1>
+						<br/>
+					</div>
+				</div>
+  			</div>
+  			<div class='col-md-6'>
+  				<div class="preview-drop dropzone-previews"></div>
+  			</div>
+		</div>		
+	</div>
+<!------------------------------------------------------>
+<!----------------- Image Form: End -------------------->
+<!------------------------------------------------------>
+
+	<div class="view questionaire-view">
+		<br />
+		<div class='row'>
+			<div class='col-md-8 col-md-offset-2'>
+				<h2 class='text-center' style='margin:0;' >Add an optional questionaire for your event?</h2>
+			</div>
+		</div>
+		<br>
+		<div class='row question-event'>
+			<div class='col-md-10'>
+				<div class='form-group form-inline question-formset'>
+					<label class="number_circle"><span>1</span></label>
+					{{ question.management_form }}
+					{{ question.form.management_form }} 
+					{% for question in question.forms  %}
+						{{ question }}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="view confirmation">
+		<span>Confirmation</span>
+	</div>
+
+{% endblock content_block %}

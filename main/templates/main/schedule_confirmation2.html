@@ -1,0 +1,33 @@
+{% extends 'main/base_normal.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% block header %}
+{{ wizard.form.media }}
+{% endblock %}
+
+{% block main %}
+
+<div class='profile_content'>
+	<form action="" method="post">{% csrf_token %}
+        <div class='container'>
+		<div class='col-md-12'>
+			<div class='row'>
+				{{ wizard.management_form }}
+				{% if wizard.form.forms %}
+    					{{ wizard.form.management_form }}
+    					{% for form in wizard.form.forms %}
+        					{{ form }}
+    					{% endfor %}
+				{% else %}
+    					{{ wizard.form }}
+				{% endif %}
+				{% if wizard.steps.prev %}
+					<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.next }}">{% trans "first step" %}</button>
+					<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.next }}">{% trans "next step" %}</button>
+				{% endif %}		
+			</div>
+		</div>
+	</div>
+	</form>
+</div>
+{% endblock %}             

@@ -1,0 +1,7 @@
+README.txt
+argparse.py
+pip-egg-info/argparse.egg-info/PKG-INFO
+pip-egg-info/argparse.egg-info/SOURCES.txt
+pip-egg-info/argparse.egg-info/dependency_links.txt
+pip-egg-info/argparse.egg-info/top_level.txt
+test/test_argparse.py

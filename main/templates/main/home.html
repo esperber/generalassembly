@@ -1,0 +1,90 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+
+<link rel='stylesheet' type='text/css' href="{% static 'main/home.css' %}" />
+
+{% block main %}
+		<div class='video_display_container'>
+			<div id='video_block' style='display: relative; height: 475px;'>
+		 		<video width='100%' height:'210' autoplay loop>
+                			<source src='{% static "main/waves.mp4" %}' type="video/mp4"/>
+                		</video>
+			</div>
+			<div class='col-md-7 col-md-offset-3 activity_search'>
+        			<form class='form-inline' role='search'>
+                			<div class='form-group'>
+                        			<input type='text' class='form-control' style='width: 350px;' placeholder='Search For An Activity (Surfing, Cooking, etc)'>
+					</div>
+					<button style='display:inline; width: 100px;' type='submit' class='btn btn-info'>Search</button>
+                 		</form>
+        		</div>
+		</div>
+	<div class='container your_activities'>
+		<hr>
+		<div class='row'>
+                        <div class='col-md-4'>  
+                                <h2>Scheduled</h2>
+                        </div>
+                </div>
+	</div>
+	<div class='container activities_near_you'>
+		<hr>
+		<div class='row'>
+			<div class='col-md-4'>	
+				<h2>Happening Near You</h2>
+			</div>
+		</div>
+		<br>
+		<div class='row'>
+			<div class='col-md-4'>
+				<div class='one_picture darken_one'>
+					<h3 class='thumb_title'>Go For A Balloon Ride</h3>
+				</div>
+			</div>
+			<div class='col-md-4'>
+				<div class='two_picture darken_two'>
+					<h3 class='thumb_title'>Make Homemade Pasta</h3>
+				</div>
+                        </div>
+			<div class='col-md-4'>
+				<div class='three_picture darken_three'>
+					<h3 class='thumb_title'>Roll Your Own  Cigar</h3>
+				</div>
+                        </div>
+		</div>
+		<br>
+		<div class='row'>
+                        <div class='col-md-6'>
+                        	<div class='four_picture darken_four'>
+					<h3 class='thumb_title'>Learn To Skate</h3>
+				</div>
+			</div>
+                        <div class='col-md-6'>
+                        	<div class='five_picture darken_five'>
+					<h3 class='thumb_title'>Take A Guided Tour of Old Town</h3>
+				</div>
+			</div>
+                </div>
+		<br>
+		<div class='row'>
+                        <div class='col-md-4'>
+                        	<div class='six_picture darken_six'>
+					<h3 class='thumb_title'>Make An Old Fashion</h3>
+				</div>
+			</div>
+                        <div class='col-md-4'>
+                                <div class='seven_picture darken_seven'>
+					<h3 class='thumb_title'>Make A Souffle</h3>
+				</div>
+                        </div>
+                        <div class='col-md-4'>
+                                <div class='eight_picture darken_eight'>
+					<h3 class='thumb_title'>Produce Electronic Music</h3>
+				</div>
+                        </div>
+                </div>
+		<br>
+
+
+	</div> 
+{% endblock %}

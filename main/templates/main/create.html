@@ -1,0 +1,85 @@
+{% extends 'main/base_normal.html' %}
+{% load staticfiles %}
+
+
+{% block main %}
+<div class='profile_content'>
+	<div class='container'>
+		<div class='col-md-12'>
+			<div class='row'>
+				<div class='col-md-2 step description'> 
+					<span class="number_circle"><span>1</span></span><span class='step_text'> General</span>
+				</div>
+				<div class='col-md-2 step location'>
+                                        <span class="number_circle"><span>2</span></span><span class='step_text'> Location</span>
+                                </div>
+				<div class='col-md-2 step price'>
+                                        <span class="number_circle"><span>3</span></span><span class='step_text'> Price</span>
+                                </div>
+				<div class='col-md-2 step pictures'>
+                                        <span class="number_circle"><span>4</span></span><span class='step_text'> Pictures</span>
+                                </div>
+				<div class='col-md-2 step questionaire'>
+                                        <span class="number_circle"><span>5</span></span><span class='step_text'> Questionaire</span>
+                                </div>
+				<div class='col-md-2 step confirmation'>
+                                        <span class="number_circle"><span>6</span></span><span class='step_text'> Confirmation</span>
+                                </div>
+			</div>
+			<hr>
+			<form action="/main/create/" class="dropzone" id="my-awesome-dropzone" method="post">
+				{% csrf_token %}
+				<div class='form-view'>
+					<div class='row form-content'>
+                		<div class='col-md-8'>
+							<div id="scroll-view">
+								<div id="scroll-items">
+									{% block content_block %}
+									{% endblock content_block %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='row navigation-buttons'>
+						<div class='col-md-6'>
+							<span class="btn btn-info standard-button" id="previous" style="display:none;">Previous</span>
+						</div>
+						<div class='col-md-6'>
+							<span class="btn btn-info pull-right standard-button" id="next">Next</span>
+							<button type='submit' class="btn btn-success pull-right standard-button" id="submit"  style="display:none;">Submit</button>	
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Dropzone Template: Start --> 
+<div id="preview-template" style="display: none;">
+    <div class='col-md-4'>
+		<div class="dz-preview dz-file-preview">
+			<div class="dz-image uploaded-image">
+				<div class="dz-filename"><span data-dz-name></span></div>
+			</div>
+		</div>
+    </div>
+</div>
+<!-- Dropzone Template: End -->
+
+
+<link rel='stylesheet' href="{% static 'main/create.css' %}" />
+<script type="text/javascript" src="{% static 'main/lightbox.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/jquery.formset.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/dropzone.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/create.js' %}"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $('.question-formset').formset({
+        	keepFieldValues : '.add-question',
+    	})
+    })
+</script>
+{% endblock %}
+               

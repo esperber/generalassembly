@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="/static/something/skrollr/src/skrollr.js"></script>
+<script src="/static/something/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'main/base.css' %}" />
+<link rel="stylesheet" href="{% static 'main/base.js' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'something/reserve.css' %}" />
+<link rel='stylesheet' type='text/css' href="{% static 'main/home.css' %}" />
+<link rel='stylesheet' type='text/css' href="{% static 'main/Flat-UI/dist/flat-ui.css' %}" />
+<head>
+</head>
+<body>
+	<div class='header_block'>
+        	<a href="/main/home"><span class="navbar-text navbar-left">Something<b>New</b>.</span></a>
+                <div class="dropdown pull-right user-options">
+                	<a href="/something/reserve">
+                        	<span class="navbar-text reserve glyphicon glyphicon-calendar"></span>
+                        	<span class="navbar-text schedule-text">Create Your Own</span>
+			</a>
+                        <a data-toggle="dropdown" href="#"><span  class="navbar-text user-icon glyphicon glyphicon-user"></span></a>
+                       	<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dLabel">
+                        	<li role="presentation"><a role="menuitem" tabindex="-1" href="/main/profile">My Profile</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'auth:logout' %}?next=/something/">Logout</a></li>
+                        </ul>
+                </div>
+        </div>
+	<div class='content_block'>
+   		{% block main %}{% endblock %}
+	</div>
+	<div class="panel-footer">
+                <div class="container">
+			<div style="padding-top: 15px; padding-bottom: 10px;" class="col-md-4">
+				<span>
+                                	Something<b>New.</b>
+                        	</span>
+				<img style="margin-left: 60px; margin-top: -5px; width: 24px;  height: 24px;" src="{% static "main/twitter.png" %}" alt="hello" />
+                                <img style="margin-left: 15px; margin-top: -5px; width: 24px; height: 24px;" src="{% static "main/instagram.png" %}" alt="hello" />
+                                <img style="margin-left: 15px; margin-top: -5px; width: 24px; height: 24px;" src="{% static "main/facebook.png" %}" alt="hello" />
+			</div>
+			
+                
+		<div style="padding-top: 15px; padding-bottom: 10px;" class="col-md-6 col-md-push-2 footer_list">
+			<ul>
+				<li>Become a Host</li>
+				<li>Our Story</li>
+				<li>Blog</li>
+				<li>Careers</li>
+				<li>Terms of Service</li>
+			</ul>
+		</div>
+		</div>
+        </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{% extends 'main/base_normal.html' %}
+{% load staticfiles %}
+{% block main %}
+<div class='profile_content'>
+	<div class='container'>
+		<div class='col-md-12' style='margin-top: 50px;'>
+			<div class='row'>
+				<div class='col-md-4'>
+					<h2 style='display:inline;'>Your Activities</h2>
+				</div>
+				<div class='col-md-2 col-md-offset-4'>
+					<a href='/main/create' class='btn btn-block btn-embossed btn-info'>Schedule</a>
+				</div>
+				<div class='col-md-2'>
+					<a href='/main/create' class='btn btn-block btn-embossed btn-success'>Create</a>
+				</div>
+			</div>
+			<div class='row'>
+				<hr>
+			</div>
+			<div class='crud_container'>
+				{% include 'main/helpers/activities_crud.html' %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+               

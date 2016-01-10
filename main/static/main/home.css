@@ -1,0 +1,117 @@
+.header_block{
+	position: relative;
+	z-index:1;
+}
+
+video { 
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.activity_search{
+  position: absolute;
+  top: 50%;
+
+}
+
+.one_picture{
+  height: 200px;
+  background: url(/static/main/balloon_ride.jpg);
+  background-size: cover;
+}
+
+.darken_one{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+    url(/static/main/balloon_ride.jpg);
+}
+
+.two_picture{
+  height: 200px;
+  background: url(/static/main/pasta_making.jpg);
+  background-size: cover;
+}
+
+.darken_two{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+    url(/static/main/pasta_making.jpg);
+}
+
+.three_picture{
+  height: 200px;
+  background: url(/static/main/cigars.jpg);
+  background-size: cover;
+}
+
+.darken_three{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+    url(/static/main/cigars.jpg);
+}
+
+.four_picture{
+  height: 200px;
+  background: url(/static/main/skateboarding.jpg);
+  background-size: cover;
+}
+
+.darken_four{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+    url(/static/main/skateboarding.jpg);
+}
+
+.five_picture{
+  height: 200px;
+  background: url(/static/main/tour.jpeg);
+  background-size: cover;
+}
+
+.darken_five{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+    url(/static/main/tour.jpeg);
+}
+
+.six_picture{
+  height: 200px;
+  background: url(/static/main/bartending.jpg);
+  background-size: cover;
+}
+
+.darken_six{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+    url(/static/main/bartending.jpg);
+}
+
+.seven_picture{
+  height: 200px;
+  background: url(/static/main/dessert_making.jpg);
+  background-size: cover;
+}
+
+.darken_seven{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+    url(/static/main/dessert_making.jpg);
+}
+
+.eight_picture{
+  height: 200px;
+  background: url(/static/main/produce.jpg);
+  background-size: cover;
+}
+
+.darken_eight{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+    url(/static/main/produce.jpg);
+}
+
+.thumb_title{
+  	font-weight: 100;
+  	color: white;
+  	text-transform: uppercase;
+  	margin: 0;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	font-size: 2rem;
+  	transform: translate(-50%, -50%);
+}

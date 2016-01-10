@@ -1,0 +1,94 @@
+.event-menu{
+	font-size: 12px;
+}
+
+.create-header{
+	font-size: 30px;
+	font-weight: lighter;
+}
+
+.description-input{
+	height: 100px !important;
+}
+
+.number_circle {
+    display:inline-block;
+    line-height:0px;
+    
+    border-radius:50%;
+    border:2px solid;
+    
+    font-size:10px;
+}
+
+.step{
+	cursor: pointer;
+}
+
+.standard-button{
+	width: 100px;
+}
+
+.step_text{
+	font-size: 12px;
+}
+
+.number_circle span {
+    display:inline-block;
+    
+    padding-top:50%;
+    padding-bottom:50%;
+    
+    margin-left:8px;
+    margin-right:8px;
+}
+
+.view { 
+	width: 900px; 
+	min-height: 350px; 
+	float:left; 
+}
+#scroll-view {
+    width: 900px;
+    min-height: 350px;
+    overflow-x:hidden;
+    overflow-y:auto;
+    position:relative;
+}
+#scroll-items { 
+	width: 10000px; 
+	min-height: 350px; 
+	position: absolute; 
+}
+.uploaded-image {
+	padding-top: 5px;
+	position: relative;
+	display: inline-block;
+}
+
+.remove-image{
+	color: red;
+	position: absolute;
+	right:5px;
+	top:0;
+	padding: 5px;
+}
+
+.questionaire-input{
+	margin-left: 20px !important;
+	width: 80% !important;
+}
+
+.drop-folder{
+	font-size: 200px;
+}
+
+.delete-row{
+	color: red;
+	padding-top: 12px;
+}
+
+.delete-row:hover{
+	color: red;
+	opacity: .2;
+}
